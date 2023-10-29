@@ -1,0 +1,161 @@
+Question 7:
+/******************************************************************************
+
+                            Online C# Compiler.
+                Code, Compile, Run and Debug C# program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+using System;
+public class Lec1Q7
+{
+    static void Main(String []args)
+    {
+        int [] arr = {21,43,22,67,43,12,4};
+        for(int i = 0; i<3;i++)
+        {
+            arr[i] = arr[i] + arr[6-i];
+            arr[6-i] = arr[i] - arr[6-i];
+            arr[i] = arr[i] - arr[6-i];
+        }
+        for(int j = 0; j<7;j++)
+        {
+            Console.Write(arr[j] + " ");
+        }
+    }
+}
+
+
+
+Question 6:
+/******************************************************************************
+
+                            Online C# Compiler.
+                Code, Compile, Run and Debug C# program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+using System;
+public class Employee
+{
+    public static string name;
+    public static string city;
+    public static double b_sal;
+    public static double DA;
+    public static double HRA;
+    public static void Main(string [] args)
+    {
+        getdata();
+        display(calculate());
+        
+    }
+    static void getdata()
+    {
+        name = Console.ReadLine();
+        city = Console.ReadLine();
+        b_sal = Convert.ToDouble(Console.ReadLine());
+        DA = Convert.ToDouble(Console.ReadLine());
+        HRA = Convert.ToDouble(Console.ReadLine());
+    }
+    static double calculate()
+    {
+        double Total = b_sal + b_sal*DA/100 + b_sal*HRA/100;
+        return Total;
+    }
+    static void display(double t)
+    {
+        Console.WriteLine("Name: " + name);
+        Console.WriteLine("City: " + city);
+        Console.WriteLine("Basic Salary: " + b_sal);
+        Console.WriteLine("DA: " + DA + "%");
+        Console.WriteLine("HRA: " + HRA + "%");
+        Console.WriteLine("Total: " + t);
+    }
+}
+
+
+Question 4:
+/******************************************************************************
+
+                            Online C# Compiler.
+                Code, Compile, Run and Debug C# program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+using System;
+public class Lec1Q4
+{
+    public static void Main(string [] args)
+    {
+        int [] nums = {2,7,11,15};
+        Console.WriteLine("Enter the target number: ");
+        int tar = Convert.ToInt32(Console.ReadLine());
+        for(int i = 0; i<4;i++)
+        {
+            for(int j = 0; j<4;j++)
+            {
+                if(i == j)
+                {
+                    continue;
+                }
+                if(nums[i]+nums[j] == tar)
+                {
+                    Console.WriteLine("[" + i + ", " + j + "]");
+                    return;
+                }
+            }
+        }
+        Console.WriteLine("There is no such combination possible");
+    }
+}
+
+
+Question 1:
+/******************************************************************************
+
+                            Online C# Compiler.
+                Code, Compile, Run and Debug C# program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+using System;
+public class Lec1Q1
+{
+    public static void Main(string [] args)
+    {
+        int [] nums = {0,0,0,0};
+        for(int i = 0; i<nums.Length;i++)
+        {
+            nums[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine(arg(nums));
+        
+    }
+    static bool arg(int [] ar)
+    {
+        for(int j = 0; j< ar.Length;j++)
+        {
+            for(int k = 0; k< ar.Length;k++)
+            {
+                if(j == k)
+                {
+                    continue;
+                }
+                if(ar[j] == ar[k])
+                {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
+}
+
+
+Question 2:
+
